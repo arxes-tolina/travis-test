@@ -3,7 +3,8 @@ deploy:
   provider: releases
   api_key:
     secure: ${apikey}
-  file: target/travis-test-$TRAVIS_TAG.jar
+  file: target/*.jar
+  file_glob: true
   on:
     tags: true
     repo: arxes-tolina/travis-test
