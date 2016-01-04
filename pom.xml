@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.tolina</groupId>
+	<artifactId>travis-test</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<licenses>
+		<license>
+			<name>Apache License 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+		</license>
+	</licenses>
+
+	<organization>
+		<name>arxes-tolina GmbH</name>
+		<url>https://www.arxes-tolina.de/</url>
+	</organization>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>1.8</source>
+						<target>1.8</target>
+						<compilerArgument>-Xlint:unchecked,deprecation</compilerArgument>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.sonar</groupId>
+				<artifactId>sonar-packaging-maven-plugin</artifactId>
+				<version>1.12.1</version>
+				<extensions>true</extensions>
+				<configuration>
+					<pluginClass>de.tolina.sonar.plugins.TolinaSonarPlugin</pluginClass>
+					<pluginUrl>https://github.com/arxes-tolina/sonar-plugins</pluginUrl>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
